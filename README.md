@@ -383,17 +383,18 @@ que se seguem assumem uma implementação simples em consola/terminal ou com
 
 O ecrã principal do jogo deve mostrar o seguinte:
 
-* Mapa do jogo, distinguindo claramente a parte explorada da parte inexplorada.
-* Estatísticas do jogador: nível atual, _hit points_ (HP), arma selecionada e
-  percentagem de ocupação do inventário.
-* Em cada _tile_ do mapa explorado devem ser diferenciáveis os vários elementos
-  presentes (itens, NPCs, etc), até um máximo razoável.
-* Uma legenda, explicando o que é cada elemento no mapa.
-* Uma ou mais mensagens descrevendo o resultado das ações realizadas na _turn_
-  anterior por parte dos jogadores e dos _NPCs_ no _tile_ atual.
-* Descrição do que está no _tile_ atual, bem como nos _tiles_ na respetiva
-  vizinhança de [Von Neumann][].
-* Indicação das ações realizáveis.
+*   Mapa do jogo, distinguindo claramente a parte explorada da parte
+    inexplorada.
+*   Estatísticas do jogador: nível atual, _hit points_ (HP), arma selecionada e
+    percentagem de ocupação do inventário.
+*   Em cada _tile_ do mapa explorado devem ser diferenciáveis os vários
+    elementos presentes (itens, NPCs, etc), até um máximo razoável.
+*   Uma legenda, explicando o que é cada elemento no mapa.
+*   Uma ou mais mensagens descrevendo o resultado das ações realizadas na
+    _turn_ anterior por parte dos jogadores e dos _NPCs_ no _tile_ atual.
+*   Descrição do que está no _tile_ atual, bem como nos _tiles_ na respetiva
+    vizinhança de [Von Neumann][].
+*   Indicação das ações realizáveis.
 
 A [Figura 1](#fig1) mostra uma possível implementação da visualização do jogo
 em modo de texto.
@@ -570,7 +571,8 @@ exemplo, o tipo `Player` deve ser definido como um apontador para uma
 ### Fases da implementação
 
 O jogo deve ser implementado incrementalmente em várias fases. Os projetos
-precisam de implementar pelo menos a Fase 1 para serem avaliados. Atenção que a
+precisam de implementar pelo menos a Fase 1 para serem avaliados, mesmo que
+tenham implementado a [Fase Extra](#fase-extra). Atenção que a
 [geração procedimental/aleatória](#procedural) dos elementos do jogo, bem como
 a [visualização](#visualize), são **obrigatórias** em todas as fases de
 implementação.
@@ -581,7 +583,7 @@ ficou por implementar. Por exemplo, se o grupo implementar tudo até à fase 5
 fase 5. Ou seja, é vantajoso seguir a ordem sugerida para as fases de
 implementação e não "saltar" fases. A única excepção é a
 [Fase Extra](#fase-extra), que pode ser implementada e será avaliada de forma
-separada às restantes fases.
+separada das restantes fases.
 
 #### Fase 1
 
@@ -599,156 +601,203 @@ Na fase 1 devem ser implementados os seguintes pontos:
     *   Jogador morre quando HP chega a zero.
 
 A implementação completa desta fase equivale a 50% de cumprimento do
-[objetivo **O1**](#objetivos) (nota máxima 2.5).
+[objetivo **O1**](#objetivos) (nota máxima 5).
 
 #### Fase 2
 
 Na fase 2 devem ser implementados os seguintes pontos (além dos pontos
 indicados nas fases anteriores):
 
-* Implementação das partes exploradas e inexploradas do mapa. As partes
-  inexploradas devem ser claramente distinguíveis das partes exploradas.
+*   Implementação das partes exploradas e inexploradas do mapa. As partes
+    inexploradas devem ser claramente distinguíveis das partes exploradas.
 
 A implementação completa desta fase equivale a 60% de cumprimento do
-[objetivo **O1**](#objetivos) (nota máxima 3).
+[objetivo **O1**](#objetivos) (nota máxima 6).
 
 #### Fase 3
 
 Na fase 3 devem ser implementados os seguintes pontos (além dos pontos
 indicados nas fases anteriores):
 
-* Implementação dos mapas e da funcionalidade `(E) Pick up item` apenas para
-  mapas. Quando apanhados, os mapas revelam o nível na sua totalidade. Os mapas
-  não são guardados no inventário, desaparecendo do nível quando apanhados.
+*   Implementação dos mapas e da funcionalidade `(E) Pick up item` apenas para
+    mapas. Quando apanhados, os mapas revelam o nível na sua totalidade. Os
+    mapas não são guardados no inventário, desaparecendo do nível quando
+    apanhados.
 
 A implementação completa desta fase equivale a 65% de cumprimento do
-[objetivo **O1**](#objetivos) (nota máxima 3.25).
+[objetivo **O1**](#objetivos) (nota máxima 6.5).
 
 #### Fase 4
 
 Na fase 4 devem ser implementados os seguintes pontos (além dos pontos
 indicados nas fases anteriores):
 
-* Implementação de armadilhas: quando o jogador se move pela primeira vez para
-  um _tile_ que contém uma armadilha, perde HP entre 0 e o valor de `MaxDamage`
-  da armadilha em questão.
-* Implementação da opção `(I) Information`, que apresenta informação acerca dos
-  diferentes tipos de armadilha no jogo.
+*   Implementação de armadilhas: quando o jogador se move pela primeira vez
+    para um _tile_ que contém uma armadilha, perde HP entre 0 e o valor de
+    `MaxDamage` da armadilha em questão.
+*   Implementação da opção `(I) Information`, que apresenta informação acerca
+    dos diferentes tipos de armadilha no jogo.
 
 A implementação completa desta fase equivale a 70% de cumprimento do
-[objetivo **O1**](#objetivos) (nota máxima 3.5).
+[objetivo **O1**](#objetivos) (nota máxima 7).
 
 #### Fase 5
 
 Na fase 5 devem ser implementados os seguintes pontos (além dos pontos
 indicados nas fases anteriores):
 
-* Implementação dos _high scores_ usando ficheiros:
-  * Opção _High Scores_ do menu principal permite visualizar os 10 melhores
-    _scores_.
-  * Quando jogador morre ou seleciona a opção `Q`, _score_ é guardado caso
-    esteja entre os 10 melhores.
+*   Implementação dos _high scores_ usando ficheiros:
+    *   Opção _High Scores_ do menu principal permite visualizar os 10 melhores
+        _scores_.
+    *   Quando jogador morre ou seleciona a opção `Q`, _score_ é guardado caso
+        esteja entre os 10 melhores.
 
 A implementação completa desta fase equivale a 75% de cumprimento do
-[objetivo **O1**](#objetivos) (nota máxima 3.75).
+[objetivo **O1**](#objetivos) (nota máxima 7.5).
 
 #### Fase 6
 
 Na fase 6 devem ser implementados os seguintes pontos (além dos pontos
 indicados nas fases anteriores):
 
-* Jogador tem inventário que permite guardar itens até um peso máximo
-  pré-determinado.
-* Implementação das funcionalidades `(E) Pick up item` e `(V) Drop item` para
-  comida e armas. Quando este tipo de itens (comida e armas) são apanhados, são
-  guardados no inventário do jogador, caso o mesmo ainda suporte o peso.
-* Atualização da opção `(I) Information` de modo a mostrar informação acerca
-  dos diferentes itens existentes no jogo.
+*   Jogador tem inventário que permite guardar itens até um peso máximo
+    pré-determinado.
+*   Implementação das funcionalidades `(E) Pick up item` e `(V) Drop item` para
+    comida e armas. Quando este tipo de itens (comida e armas) são apanhados,
+    são guardados no inventário do jogador, caso o mesmo ainda suporte o peso.
+*   Atualização da opção `(I) Information` de modo a mostrar informação acerca
+    dos diferentes itens existentes no jogo.
 
 A implementação completa desta fase equivale a 80% de cumprimento do
-[objetivo **O1**](#objetivos) (nota máxima 4).
+[objetivo **O1**](#objetivos) (nota máxima 8).
 
 #### Fase 7
 
 Na fase 7 devem ser implementados os seguintes pontos (além dos pontos
 indicados nas fases anteriores):
 
-* Implementação da funcionalidade `(U) Use item`, nomeadamente:
-  * O jogador pode consumir itens de comida presentes no seu inventário, e o
-    seu `HP` deve aumentar de acordo com a comida consumida, até ao máximo de
-    100.
-  * O jogador pode equipar uma das armas que tem no seu inventário. A arma
-    equipada continua a contar para o peso total do inventário. A arma
-    anteriormente equipada é movida para o inventário.
+*   Implementação da funcionalidade `(U) Use item`, nomeadamente:
+    *   O jogador pode consumir itens de comida presentes no seu inventário, e
+        o seu `HP` deve aumentar de acordo com a comida consumida, até ao
+        máximo de 100.
+    *   O jogador pode equipar uma das armas que tem no seu inventário. A arma
+        equipada continua a contar para o peso total do inventário. A arma
+        anteriormente equipada é movida para o inventário.
 
 A implementação completa desta fase equivale a 85% de cumprimento do
-[objetivo **O1**](#objetivos) (nota máxima 4.25).
+[objetivo **O1**](#objetivos) (nota máxima 8.5).
 
 #### Fase 8
 
 Na fase 8 devem ser implementados os seguintes pontos (além dos pontos
 indicados nas fases anteriores):
 
-* Implementação de NPCs com as características pedidas. Os NPCs existem no jogo
-  e aparecem na visualização, mas não interferem, não atacam o jogador e não
-  podem ser atacados.
+*   Implementação de NPCs com as características pedidas. Os NPCs existem no
+    jogo e aparecem na visualização, mas não interferem, não atacam o jogador e
+    não podem ser atacados.
 
 A implementação completa desta fase equivale a 90% de cumprimento do
-[objetivo **O1**](#objetivos) (nota máxima 4.5).
+[objetivo **O1**](#objetivos) (nota máxima 9).
 
 #### Fase 9
 
 Na fase 9 devem ser implementados os seguintes pontos (além dos pontos
 indicados nas fases anteriores):
 
-* Combate passivo: o jogador é atacado por NPCs hostis quando se move para
-  _tile_ onde os mesmos se encontrem.
+*   Combate passivo: o jogador é atacado por NPCs hostis quando se move para
+    _tile_ onde os mesmos se encontrem.
 
 A implementação completa desta fase equivale a 95% de cumprimento do
-[objetivo **O1**](#objetivos) (nota máxima 4.75).
+[objetivo **O1**](#objetivos) (nota máxima 9.5).
 
 #### Fase 10
 
 Na fase 10 devem ser implementados os seguintes pontos (além dos pontos
 indicados nas fases anteriores):
 
-* Combate ativo: implementação da opção `(F) Attack NPC`.
+*   Combate ativo: implementação da opção `(F) Attack NPC`.
 
 A implementação completa desta fase equivale a 100% de cumprimento do
-[objetivo **O1**](#objetivos) (nota máxima 5).
+[objetivo **O1**](#objetivos) (nota máxima 10).
 
 #### Fase extra
 
-Na fase extra devem ser implementados os seguintes pontos (além dos pontos
-indicados nas fases anteriores):
+A fase extra oferece um bónus extra até 3 valores, sendo avaliada de forma
+separada das restantes fases. A sua correta implementação permite compensar
+eventuais problemas e/ou limitações noutras partes do código e/ou do projeto. A
+fase extra consiste em:
 
-* Implementação de _save games_, com opção extra no menu principal de _load
-  game_.
-
-A implementação completa desta fase permite compensar eventuais problemas
-noutras partes do código e/ou do projeto, facilitando a obtenção da nota
-máxima de 5 valores.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Objetivos, critério de avaliação e entrega
+*   Uso de biblioteca gráfica para implementação da visualização do jogo, tal
+    como descrito na secção [Visualização do jogo](#visualize).
 
 <a name="objetivos"></a>
 
-### Objetivos
+## Objetivos e critério de avaliação
+
+Este projeto tem os seguintes objetivos:
+
+*   **O1** - Jogo deve funcionar como especificado (ver [fases](#fases) de
+    implementação, obrigatório implementar pelo menos a Fase 1).
+*   **O2** - Projeto e código bem organizados, nomeadamente: a) estrutura de
+    classes bem pensada (ver secção [Organização do projeto e estrutura de
+    ficheiros](#orgproj)); b) código devidamente comentado e indentado; c)
+    inexistência de código "morto", que não faz nada, como por exemplo
+    variáveis ou funções nunca usadas; d) soluções [simples][KISS] e
+    eficientes; e, e) projeto compila e executa sem erros e/ou  _warnings_.
+*   **O3** - Projeto adequadamente comentado e documentado. Documentação deve
+    ser feita e gerada com o [Doxygen][]. A documentação gerada deve estar
+    incluída no ZIP do projeto (mas não integrada no repositório Git).
+*   **O4** - Repositório Git deve refletir boa utilização do mesmo, com
+    _commits_ de todos os elementos do grupo e mensagens de _commit_ que sigam
+    as melhores práticas para o efeito (como indicado
+    [aqui](https://chris.beams.io/posts/git-commit/),
+    [aqui](https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53),
+    [aqui](https://github.com/erlang/otp/wiki/writing-good-commit-messages) e
+    [aqui](https://stackoverflow.com/questions/2290016/git-commit-messages-50-72-formatting)).
+*   **O5** - Relatório em formato [Markdown][] (ficheiro `README.md`),
+    organizado da seguinte forma:
+    *   Título do projeto.
+    *   Nome dos autores (primeiro e último) e respetivos números de aluno.
+    *   Indicação do repositório público Git utilizado. Esta indicação é
+        opcional, pois podem preferir desenvolver o projeto num repositório
+        privado.
+    *   Informação de quem fez o quê no projeto. Esta informação é
+        **obrigatória** e deve refletir os _commits_ feitos no Git.
+    *   Descrição da solução:
+        *   Fase implementada (1 a 10, e/ou extra).
+        *   Arquitetura da solução, com breve explicação de como o programa foi
+      organizado e indicação das estruturas de dados usadas (para o inventário
+      e para a grelha de jogo, por exemplo), bem como os algoritmos
+      implementados (para desenhar o mapa e para geração procedimental, por
+      exemplo).
+    * Um diagrama UML mostrando as relações entre as classes e tipos
+      desenvolvidos no jogo. Não é necessário indicar os conteúdos das classes
+      (variáveis, propriedades, métodos, etc).
+    * Um fluxograma mostrando o _game loop_.
+  * Conclusões e matéria aprendida.
+  * Referências:
+    * Incluindo trocas de ideias com colegas, código aberto reutilizado e
+      bibliotecas de terceiros utilizadas. Devem ser o mais detalhados
+      possível.
+  * **Nota:** o relatório deve ser simples e breve, com informação mínima e
+    suficiente para que seja possível ter uma boa ideia do que foi feito.
+    Atenção aos erros ortográficos, pois serão tidos em conta na nota final.
+
+O projeto tem um peso de 5 valores na nota final da disciplina e será avaliado
+de forma qualitativa. Isto significa que todos os objetivos têm de ser
+parcialmente ou totalmente cumpridos. Ou seja, se os alunos ignorarem
+completamente um dos objetivos, a nota final será zero.
+
+A nota individual de cada aluno será atribuída com base na avaliação do
+projeto, na percentagem de trabalho realizada (indicada no relatório e
+verificada através dos _commits_) e na discussão do projeto. Se o aluno tiver
+realizado uma percentagem equitativa do projeto e se souber explicar o que fez
+durante a discussão, então a nota individual deverá ser muito semelhante à
+avaliação do projeto.
+
+A nota mínima neste projeto para aprovação na componente prática de LP1 é de
+4.5 valores.
+
 
 * Jogo deve funcionar como especificado.
 * Código deve compilar sem erros no compilador [GCC] e/ou [Clang] com as opções
@@ -763,25 +812,17 @@ máxima de 5 valores.
   de jogos (ver secções [Visualização do jogo](#visualize) e
   [Código exemplo](#examplecode)).
 
-### Critério de avaliação
 
-O projeto, que tem um peso de 10 valores na nota final da disciplina, será
-avaliado segundo os critérios indicados na [Tabela 1](#tabela1).
 
-<a name="tabela1"></a>
 
-**Tabela 1** - Critérios de avaliação.
 
-| Critério                                               | Peso      |
-|--------------------------------------------------------|-----------|
-| Funcionamento segundo especificações                   | 2,0 val.  |
-| Qualidade do código e das soluções<sup>[6](#fn6)</sup> | 1,5 val.  |
-| Comentários e documentação com [Doxygen]               | 1,0 val.  |
-| Relatório                                              | 1,0 val.  |
-| Desenvolvimento do projeto com Git<sup>[7](#fn7)</sup> | 1,0 val.  |
-| Tamanho da grelha/número de agentes variável           | 1,0 val.  |
-| Visualização com recurso a biblioteca externa          | 1,0 val.  |
-| Organização do projecto e _Makefile_                   | 1,5 val.  |
+
+
+
+
+
+
+
 
 ### Entrega
 
