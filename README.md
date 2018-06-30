@@ -77,12 +77,12 @@ jogador adversário é implementado com inteligência artificial. Para o efeito
 podem usar o algoritmo [Minimax][], com cortes [Alfa-Beta][] para acelerar o
 cálculo, além de ser uma excelente oportunidade para o uso de recursão.
 
-Esta extensão permite melhorar, até ao máximo de 4 valores, a nota preliminar
-do projeto. Atenção que esta extensão não é simples e os conceitos envolvidos
-não fazem parte da matéria da disciplina. Só devem abordar este problema quando
-o projeto base estiver devidamente concluído. Se abordarem o problema devem
-fazê-lo num ramo Git separado, para poderem facilmente voltar à versão base
-caso não tenham sucesso na implementação da extensão.
+Esta extensão permite melhorar, até ao máximo de 10 valores, a nota do projeto.
+Atenção que esta extensão não é simples e os conceitos envolvidos não fazem
+parte da matéria da disciplina. Só devem abordar este problema quando o projeto
+base estiver devidamente concluído. Se abordarem o problema devem fazê-lo num
+ramo Git separado, para poderem facilmente voltar à versão base caso não tenham
+sucesso na implementação da extensão.
 
 <a name="visualize"></a>
 
@@ -98,9 +98,9 @@ de jogos, como por exemplo:
     instruções no Wiki da [página no GitHub][Raylib-gh]).
 *   [SDL2][] - Muito versátil e abrangente, mas poucos exemplos em C.
 
-O uso de uma biblioteca gráfica é obrigatório, embora se aceite que a interação
-com o utilizador seja feita através do terminal (isto é, usando funções tipo
-`scanf` ou `fgets`).
+O uso de uma biblioteca gráfica é obrigatório, embora se aceite que a leitura
+de _inputs_ dos jogadores seja feita através do terminal (isto é, usando
+funções tipo `scanf` ou `fgets`).
 
 ## Implementação
 
@@ -110,11 +110,12 @@ com o utilizador seja feita através do terminal (isto é, usando funções tipo
 
 O projeto deve estar devidamente organizado, fazendo uso de múltiplas funções
 espalhadas de forma lógica em vários ficheiros. Os alunos devem criar os seus
-próprios tipos com `typedef`, suportados em enumerações e `structs`. Por
+próprios tipos com `typedef`, suportados em `structs` e enumerações. Por
 exemplo, um possível tipo `PLAYER` deve ser definido como um apontador para uma
-`struct` com os campos que definem um _player_, e todas as funções que operam
-sobre esse tipo (por exemplo `player_new` ou `player_play()`) devem estar
-no mesmo par de ficheiros `.c`/`.h`.
+`struct` contendo os campos que definem um _player_. Adicionalmente, todas as
+funções que operam sobre esse tipo (por exemplo `player_new` ou
+`player_play()`) devem ser declaradas e definidas no mesmo par de ficheiros
+`.c`/`.h`.
 
 A compição do projeto deve ser realizada com o comando [`make`][], pelo que o
 projeto deve conter uma _Makefile_ configurada para compilação C99 (_flags_
@@ -208,8 +209,8 @@ Notas adicionais para entrega:
 1.  Ler e reler o enunciado até deixarem de existir dúvidas sobre o mesmo. Se
     as mesmas persistirem, entrem em contato com o docente para esclarecimentos
     adicionais.
-2.  Fazer um plano de desenvolvimento do projeto, com um objetivo concreto das
-    fases a implementar.
+2.  Fazer um plano de desenvolvimento do projeto, com objetivos concretos e
+    fases de implementação bem definidas.
 3.  Dividir bem o trabalho entre os elementos do grupo.
 4.  Organizar as estruturas e funções em ficheiros separados em volta de um
     conceito comum: _piece_, _board_, _player_, etc. Por exemplo, no caso do
