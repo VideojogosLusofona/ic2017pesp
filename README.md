@@ -11,7 +11,6 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 -->
 
 [![Enunciado: CC BY-NC-SA 4.0](https://img.shields.io/badge/Enunciado-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-[![Código: GPLv3](https://img.shields.io/badge/Código-GPLv3-blue.svg)](http://www.gnu.org/licenses/gpl.html)
 
 # Projeto de Época Especial de Introdução à Computação 2017/2018
 
@@ -316,9 +315,7 @@ Estruturas de Dados][aed] do [Instituto Superior Técnico][ist]_
 
 ## Licenças
 
-Todo o código neste repositório é disponibilizado através da licença [GPLv3][].
-O enunciado e restante documentação são disponibilizados através da licença
-[CC BY-NC-SA 4.0][].
+O enunciado é disponibilizado através da licença [CC BY-NC-SA 4.0][].
 
 ## Metadados
 
@@ -326,7 +323,6 @@ O enunciado e restante documentação são disponibilizados através da licença
 *   Curso: [Licenciatura em Videojogos][lamv]
 *   Instituição: [Universidade Lusófona de Humanidades e Tecnologias][ULHT]
 
-[GPLv3]:https://www.gnu.org/licenses/gpl-3.0.en.html
 [CC BY-NC-SA 4.0]:https://creativecommons.org/licenses/by-nc-sa/4.0/
 [lamv]:https://www.ulusofona.pt/licenciatura/videojogos
 [Nuno Fachada]:https://github.com/fakenmc
